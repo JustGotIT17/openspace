@@ -1,7 +1,8 @@
 var app = angular.module('StarterApp', [
-		'ngMaterial', 
-		'ui.router'
-	]);
+	'ngMaterial', 
+	'ui.router',
+	'HomeModule'
+]);
 
 app.config(function($stateProvider, $urlRouterProvider){
 	$stateProvider
@@ -24,8 +25,3 @@ app.config(function($stateProvider, $urlRouterProvider){
 
 	$urlRouterProvider.otherwise('/');
 })
-
-
-app.controller('AppCtrl', ['$scope', function($scope){
-	
-}]);

@@ -1,5 +1,5 @@
 
-<md-card-content layout="column" layout-sm="column" layout-align="center center" layout-wrap>
+<md-card-content layout="column" layout-sm="column" layout-align="center center" layout-wrap ng-controller="SignupController">
 	<h1>Sign Up</h1>
 	<div layout="row wrapper" layout-wrap>
 		<md-list>
@@ -7,11 +7,11 @@
 				<div layout layout-sm="column" layout-padding>
 					<md-input-container flex>
 						<label>First Name</label>
-						<input type="text">
+						<input type="text" ng-model="fname">
 					</md-input-container>
 					<md-input-container flex>
 						<label>Last Name</label>
-						<input type="text">
+						<input type="text" ng-model="lname">
 					</md-input-container>
 				</div>
 			 </md-list-item>
@@ -19,11 +19,11 @@
 			 	<div layout layout-sm="column" layout-padding>
 			 		<md-input-container flex>
 			 			<label>Username</label>
-			 			<input type="text">
+			 			<input type="text" ng-model="uname">
 			 		</md-input-container>
 			 		<md-input-container flex>
 			 			<label>Email Address</label>
-			 			<input type="email">
+			 			<input type="email" ng-model="email">
 			 		</md-input-container>
 			 	</div>
 			 </md-list-item>
@@ -31,17 +31,18 @@
 			 	<div layout layout-sm="column" layout-padding>
 			 		<md-input-container flex>
 			 			<label>Password</label>
-			 			<input type="password">
+			 			<input type="password" ng-model="password">
 			 		</md-input-container>
 			 		<md-input-container flex>
 			 			<label>Confirm Password</label>
-			 			<input type="password">
+			 			<input type="password" ng-model="cpassword">
 			 		</md-input-container>			
 			 	</div>	
 			 </md-list-item>
-			 <md-list-item class="md-3-line" layout="column">
-			 	<md-subheader class="md-no-sticky">Signing up means agreeing to the <a href="#">Terms and Conditions</a> </md-subheader>
-			 	<md-button flex ui-sref="signup" class="md-raised">Submit</md-button>
+			 <input type="hidden" name="_token" ng-model="csrf" value="{!! csrf_token() !!}">
+			 <md-list-item class="md-1-line" layout="column">
+			 	<md-subheader class="md-no-sticky">Signing up means you agree to the <a href="#">Terms and Conditions</a>. </md-subheader>
+			 	<md-button class="md-raised" ng-click="submit()">Submit</md-button>
 		 	</md-list-item>
 		</md-list>		
 	</div>

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\User;
 class HomeController extends Controller
 {
     /**
@@ -30,9 +30,12 @@ class HomeController extends Controller
      *
      * @return Response
      */
-    public function create()
+    public function do_signup(Request $request)
     {
         //
+            $data = $request->all();
+            $user = User::Create($data);
+            return $user;
     }
 
     /**
