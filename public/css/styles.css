@@ -105,12 +105,14 @@ nav#main {
 nav#main div#logo {
 	display: flex;
 	flex-flow:row column;
-	flex-grow:1;
-	justify-content:center;
+	flex-grow:.5;
+	justify-content:flex-end;
+	padding-right: 15px;
 }
 nav#main div#logo img {
 	width: 50px;
 	height: 50px;
+
 }
 nav#main div#logo span{
 	display: flex;
@@ -118,17 +120,19 @@ nav#main div#logo span{
 	margin-left: 5px;
 	color: rgba(54, 84, 121, 1);
 	text-transform: uppercase;
-	font-weight: bolder;
+	font-weight: 150;
 	text-shadow: 2px 2px rgba(0,0,0,.2);
 }
 nav#main ul#menu{
 	display: flex;
 	flex-flow:row wrap;
-	flex-grow:1.5;
+	flex-grow:2;
+	border-left: 2px solid #365479;
 }
 nav#main #menu li a{
 	text-decoration:none;
-	color: #000;
+	color: #365479;
+	font-weight: bold;
 	border-radius: 5px 5px 0px ,0px; 
 	font-family: 'RobotoDraft', arial;
 	letter-spacing: .07em;
@@ -143,4 +147,11 @@ nav#main #menu li a{
 .wrapper {
 	width: 80%;
 	margin: 80px auto 0px auto;
+}
+span.error-msg {
+	color: salmon;
+	font-size: .75em;
+}
+md-dialog md-dialog-content .md-title {
+	margin-bottom: 10px;
 }

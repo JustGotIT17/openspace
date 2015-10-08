@@ -1,0 +1,23 @@
+
+<md-card-content layout="column" layout-sm="column" layout-align="center center" layout-wrap ng-controller="SigninController">
+	<h1>Sign In</h1>
+	<div layout="row wrapper" layout-wrap>
+		<md-list>
+			<md-list-item class="md-3-line">
+				<div layout="column" layout-sm="column" layout-padding>
+					<md-input-container flex>
+						<label>Username</label>
+						<input type="text" ng-model="uname">
+					</md-input-container>
+					<md-input-container flex>
+						<label>Password</label>
+						<input type="password" ng-model="password">
+					</md-input-container>
+					<md-input-container flex>
+						<md-button flex ui-sref="signin" class="md-raised md-primary" ng-click="submit()">Sign In</md-button>
+					</md-input-container>
+				</div>
+			</md-list-item>
+		</md-list>
+	</div>
+</md-card-content>

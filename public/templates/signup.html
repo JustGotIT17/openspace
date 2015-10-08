@@ -1,16 +1,18 @@
 
 <md-card-content layout="column" layout-sm="column" layout-align="center center" layout-wrap ng-controller="SignupController">
 	<h1>Sign Up</h1>
-	<div layout="row wrapper" layout-wrap>
+	<div layout="row wrapper" layout-wrap>		
 		<md-list>
-			 <md-list-item class="md-3-line">
+			 <md-list-item class="md-4-line">
 				<div layout layout-sm="column" layout-padding>
 					<md-input-container flex>
 						<label>First Name</label>
+						<span class="error-msg" ng-show="errors.firstname[0].length > 0">{{errors.firstname[0]}}</span>
 						<input type="text" ng-model="fname">
 					</md-input-container>
 					<md-input-container flex>
 						<label>Last Name</label>
+						<span class="error-msg" ng-show="errors.lastname[0].length > 0">{{errors.lastname[0]}}</span>
 						<input type="text" ng-model="lname">
 					</md-input-container>
 				</div>
@@ -19,10 +21,12 @@
 			 	<div layout layout-sm="column" layout-padding>
 			 		<md-input-container flex>
 			 			<label>Username</label>
+			 			<span class="error-msg" ng-show="errors.username[0].length > 0">{{errors.username[0]}}</span>
 			 			<input type="text" ng-model="uname">
 			 		</md-input-container>
 			 		<md-input-container flex>
 			 			<label>Email Address</label>
+			 			<span class="error-msg" ng-show="errors.email[0].length > 0">{{errors.email[0]}}</span>
 			 			<input type="email" ng-model="email">
 			 		</md-input-container>
 			 	</div>
@@ -31,10 +35,12 @@
 			 	<div layout layout-sm="column" layout-padding>
 			 		<md-input-container flex>
 			 			<label>Password</label>
+			 			<span class="error-msg" ng-show="errors.password[0].length > 0">{{errors.password[0]}}</span>
 			 			<input type="password" ng-model="password">
 			 		</md-input-container>
 			 		<md-input-container flex>
 			 			<label>Confirm Password</label>
+			 			<span class="error-msg" ng-show="errors.cpassword[0].length > 0">{{errors.cpassword[0]}}</span>
 			 			<input type="password" ng-model="cpassword">
 			 		</md-input-container>			
 			 	</div>	

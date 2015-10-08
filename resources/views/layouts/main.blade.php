@@ -15,9 +15,9 @@
                 <span>OpenSpace</span>   
             </div>
             <ul id="menu">
-                <li><a ui-sref="home">HOME</a></li>
-                <li><a ui-sref="services">SERVICES</a></li>
-                <li><a ui-sref="about">ABOUT US</a></li>
+                <li><a ui-sref="home">Home</a></li>
+                <li><a ui-sref="services">Services</a></li>
+                <li><a ui-sref="about">About</a></li>
             </ul>
         </nav>
         <div layout="column">
@@ -37,6 +37,7 @@
         <!-- END Angular Material Dependencies -->
         <script src="{{asset('js/jquery.min.js')}}"></script>
         <script src="{{asset('js/modules/home.js')}}"></script>
+        <script src="{{asset('js/modules/middleware/dialog.js')}}"></script>
         <script src="{{asset('js/ng-scripts.js')}}"></script>
         <script src="{{asset('js/scripts.js')}}"></script>
         

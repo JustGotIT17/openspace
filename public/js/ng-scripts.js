@@ -22,6 +22,9 @@ app.config(function($stateProvider, $urlRouterProvider){
 			url : '/signup',
 			templateUrl : 'templates/signup.html'
 		})
-
+		.state("signin", {
+			url : '/signin',
+			templateUrl : 'templates/signin.html'
+		})
 	$urlRouterProvider.otherwise('/');
 })

@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Auth;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\User;
+use Validator;
+
 class HomeController extends Controller
 {
     /**
@@ -34,8 +36,24 @@ class HomeController extends Controller
     {
         //
             $data = $request->all();
+            $rules = [
+                'firstname' => 'required|alpha_dash',
+                'lastname' => 'required|alpha_dash',
+                'username' => 'required|min:3|max:15|unique:users',
+                'email' => 'required|email|unique:users',
+                'password' => 'required|min:6|max:25|same:cpassword',
+                'cpassword' => 'required|min:6|max:25|same:password',
+                   
+            ];
+            $messages = [
+                'same' => 'The passwords must match.',
+            ];
+            $validation = Validator::make($data, $rules, $messages);
+            if($validation->fails())
+                return $validation->errors()->add('error', 'true');
+
             $user = User::Create($data);
-            return $user;
+            return $user ? 'Registration is successful' : 'Error occured.';
     }
 
     /**
@@ -44,7 +62,7 @@ class HomeController extends Controller
      * @param  Request  $request
      * @return Response
      */
-    public function store(Request $request)
+    public function csrf(Request $request)
     {
         //
     }
@@ -55,9 +73,12 @@ class HomeController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function show($id)
+    public function do_signin(Request $request)
     {
         //
+        $user = User::where('username', $request->get('username'))->where('password', $request->get('password'))->firstOrFail();
+        $user ? Auth::login($user) : '';
+        return Auth::check() ? $user : 'false';
     }
 
     /**
