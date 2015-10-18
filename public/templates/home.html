@@ -1,14 +1,10 @@
-<div>    
-    <div id="fullpage">
-    	<div class="section active" id="section0">
-            <section layout="column" layout-sm="column" layout-align="center center" layout-wrap>
-        		<h1>OpenSpace</h1>
-        		<p>Creating space more open and wide.</p>
-                <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-                    <md-button flex ui-sref="signup" class="md-raised">Sign Up</md-button>
-                    <md-button flex ui-sref="signin" class="md-raised md-primary">Sign In</md-button>
-                </section>
-            </section>
-    	</div>   	
-    </div>
-</div>
+<div class="container">
+    <section>
+		<h1>OpenSpace</h1>
+		<p>Creating space more open and wide.</p>
+        <section ng-hide="user.id.length > 0">
+            <button flex ui-sref="signup" class="btn btn--m btn--green btn--raised" lx-ripple lx-tooltip="Create account" tooltip-position="bottom">Sign Up</button>
+            <button flex ui-sref="signin" class="btn btn--m btn--blue btn--raised" lx-ripple lx-tooltip="Use account" tooltip-position="bottom">Sign In</button>
+        </section>
+    </section>
+</div>   	

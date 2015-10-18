@@ -12,8 +12,10 @@
 */
 
 Route::get('/', 'HomeController@index');
-Route::get('/csrf', 'HomeController@csrf');
 Route::post('/signup', 'HomeController@do_signup');
-Route::post('/signin', 'HomeController@do_signin');
+
+Route::get('/session/user', 'SessionController@user');
+Route::post('/session/signin', 'SessionController@do_signin');
+Route::get('/session/signout', 'SessionController@do_signout');
 
 

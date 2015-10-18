@@ -1,8 +1,17 @@
-var app = angular.module('HomeModule', [
-		'DialogMiddleWare'
-	]);
+'use strict';
+var app = angular.module('HomeModule', []);
 
-app.controller('SignupController', ['$scope', '$http', '$mdDialog', 'DialogFactory', function($scope, $http, $mdDialog, DialogFactory){
+app.controller('HomeController', ['$scope', 'UserFactory', function($scope, UserFactory){
+	UserFactory.getCurrentUser().then(function(res){
+		$scope.user = res
+	});
+}]);
+
+app.controller('DashboardController', ['$scope', function($scope){
+	console.log('hello');
+}]);
+
+app.controller('SignupController', ['$scope', '$http', 'DialogFactory', 'RoutingFactory', function($scope, $http, DialogFactory, RoutingFactory){
 	//
 	$scope.submit = function() {
 		$scope.data = {
@@ -16,26 +25,43 @@ app.controller('SignupController', ['$scope', '$http', '$mdDialog', 'DialogFacto
 		};
 		$http.post('/signup', $scope.data)
 			.success(function(data) {
-				if(data.error[0] === "true") {
+				if('error' in data && data.error[0] === "true") {
 					$scope.errors = data;
-					DialogFactory.showAlert('Registration failed', 'Please fill out the form correctly.');
-				}
-
-				
-			})
+					DialogFactory.showError('Registration failed', 'Please fill out the form correctly.');
+				} else{
+					$scope.errors = null;
+					DialogFactory.showInfo('Registration successful', 'Please wait.');
+					RoutingFactory.redirect('/');
+				}				
+			});
 	}
 }]);
 
-app.controller('SigninController', ['$scope', '$http', function($scope, $http){
+app.controller('SigninController', ['$scope', '$http', 'DialogFactory', 'RoutingFactory', function($scope, $http, DialogFactory, RoutingFactory){
 	$scope.submit = function() {
 		$scope.data = {
 			username : $scope.uname,
-			password : $scope.password,
+			password : $scope.password
 		};
 
-		$http.post('/signin', $scope.data)
+		$http.post('session/signin', $scope.data)
 			.success(function(data) {
 				console.log(data);
-			})
+				if('error' in data && data.error[0] === "true") {
+					$scope.errors = data;
+					DialogFactory.showError('Login failed', 'Credentials invalid.');
+				} else{
+					$scope.errors = null;
+					DialogFactory.showInfo('Login successful', 'Please wait.');
+					RoutingFactory.redirect('/');
+				}
+			});
 	}
+}]);
+
+app.controller('SignoutController', ['$http', 'DialogFactory', 'RoutingFactory', function($http, DialogFactory, RoutingFactory){
+	$http.get('session/signout').success(function(data){
+		DialogFactory.showInfo('You have been signed out.');
+		RoutingFactory.redirect('/');
+	});
 }]);

@@ -1,55 +1,83 @@
 
-<md-card-content layout="column" layout-sm="column" layout-align="center center" layout-wrap ng-controller="SignupController">
-	<h1>Sign Up</h1>
-	<div layout="row wrapper" layout-wrap>		
-		<md-list>
-			 <md-list-item class="md-4-line">
-				<div layout layout-sm="column" layout-padding>
-					<md-input-container flex>
-						<label>First Name</label>
-						<span class="error-msg" ng-show="errors.firstname[0].length > 0">{{errors.firstname[0]}}</span>
-						<input type="text" ng-model="fname">
-					</md-input-container>
-					<md-input-container flex>
-						<label>Last Name</label>
-						<span class="error-msg" ng-show="errors.lastname[0].length > 0">{{errors.lastname[0]}}</span>
-						<input type="text" ng-model="lname">
-					</md-input-container>
+<div class="ui grid ">
+	<section class="ten wide column centered">
+		<h1>Sign Up</h1>
+		<div  flex-gutter="10" >
+			<div>*Signing up means you agree to the 
+				<a href="#">Terms and Conditions</a>.
+			</div>
+			<div class="ui three top attached steps">
+				<div class="active step">
+					<i class="truck icon"></i>
+					<div class="content">
+						<div class="title">Registration Form</div>
+						<div class="description"></div>
 				</div>
-			 </md-list-item>
-			 <md-list-item class="md-3-line">
-			 	<div layout layout-sm="column" layout-padding>
-			 		<md-input-container flex>
-			 			<label>Username</label>
-			 			<span class="error-msg" ng-show="errors.username[0].length > 0">{{errors.username[0]}}</span>
-			 			<input type="text" ng-model="uname">
-			 		</md-input-container>
-			 		<md-input-container flex>
-			 			<label>Email Address</label>
-			 			<span class="error-msg" ng-show="errors.email[0].length > 0">{{errors.email[0]}}</span>
-			 			<input type="email" ng-model="email">
-			 		</md-input-container>
-			 	</div>
-			 </md-list-item>
-			 <md-list-item class="md-3-line">
-			 	<div layout layout-sm="column" layout-padding>
-			 		<md-input-container flex>
-			 			<label>Password</label>
-			 			<span class="error-msg" ng-show="errors.password[0].length > 0">{{errors.password[0]}}</span>
-			 			<input type="password" ng-model="password">
-			 		</md-input-container>
-			 		<md-input-container flex>
-			 			<label>Confirm Password</label>
-			 			<span class="error-msg" ng-show="errors.cpassword[0].length > 0">{{errors.cpassword[0]}}</span>
-			 			<input type="password" ng-model="cpassword">
-			 		</md-input-container>			
-			 	</div>	
-			 </md-list-item>
-			 <input type="hidden" name="_token" ng-model="csrf" value="{!! csrf_token() !!}">
-			 <md-list-item class="md-1-line" layout="column">
-			 	<md-subheader class="md-no-sticky">Signing up means you agree to the <a href="#">Terms and Conditions</a>. </md-subheader>
-			 	<md-button class="md-raised" ng-click="submit()">Submit</md-button>
-		 	</md-list-item>
-		</md-list>		
-	</div>
-</md-card-content>
+				</div>
+				<div class="step">
+					<i class="payment icon"></i>
+					<div class="content">
+						<div class="title">Confirmation</div>
+						<div class="description"></div>
+					</div>
+				</div>
+				<div class="disabled step">
+					<i class="info icon"></i>
+					<div class="content">
+						<div class="title">Continue</div>
+						<div class="description"></div>
+					</div>
+				</div>
+			</div>
+			<div class="ui attached segment">
+				<div flex-container="row">
+					<div flex-item>
+				        <lx-text-field label="First name" error="errors.firstname[0]">
+				            <input type="text" ng-model="fname">
+				        </lx-text-field>
+			            <span class="error-msg" ng-show="errors.firstname[0].length > 0">{{errors.firstname[0]}}</span>
+				    </div>
+					<div flex-item>
+				        <lx-text-field label="Last name" error="errors.lastname[0]">
+				            <input type="text" ng-model="lname">
+				        </lx-text-field>
+			            <span class="error-msg" ng-show="errors.lastname[0].length > 0">{{errors.lastname[0]}}</span>
+				    </div>
+			    	
+				</div>
+				<div flex-container="row" flex-gutter="24">
+					<div flex-item>
+			            <lx-text-field label="Username" error="errors.username[0]">
+			                <input type="text" ng-model="uname">
+			            </lx-text-field>
+		                <span class="error-msg" ng-show="errors.username[0].length > 0">{{errors.username[0]}}</span>
+			        </div>
+			        <div flex-item>
+				        <lx-text-field label="Email Address" error="errors.email[0]">
+				            <input type="email" ng-model="email">
+				        </lx-text-field>
+			            <span class="error-msg" ng-show="errors.email[0].length > 0">{{errors.email[0]}}</span>
+				    </div>
+				</div>
+				<div flex-container="row" flex-gutter="24">
+					<div flex-item>
+			            <lx-text-field label="Password" error="errors.password[0]">
+			                <input type="password" ng-model="password">
+			            </lx-text-field>
+		                <span class="error-msg" ng-show="errors.password[0].length > 0">{{errors.password[0]}}</span>
+			        </div>
+			        <div flex-item>
+				        <lx-text-field label="Confirm Password" error="errors.cpassword[0]">
+				            <input type="password" ng-model="cpassword">
+				        </lx-text-field>
+			            <span class="error-msg" ng-show="errors.cpassword[0].length > 0">{{errors.cpassword[0]}}</span>
+				    </div>
+				</div>
+				<div flex-container="row">			
+					<button class="btn btn--m btn--blue btn--raised" ng-click="submit()">Submit</button>
+				</div>
+			</div>
+		</div>
+			
+	</section>
+</div>

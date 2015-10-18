@@ -1,23 +1,21 @@
-
-<md-card-content layout="column" layout-sm="column" layout-align="center center" layout-wrap ng-controller="SigninController">
-	<h1>Sign In</h1>
-	<div layout="row wrapper" layout-wrap>
-		<md-list>
-			<md-list-item class="md-3-line">
-				<div layout="column" layout-sm="column" layout-padding>
-					<md-input-container flex>
-						<label>Username</label>
-						<input type="text" ng-model="uname">
-					</md-input-container>
-					<md-input-container flex>
-						<label>Password</label>
-						<input type="password" ng-model="password">
-					</md-input-container>
-					<md-input-container flex>
-						<md-button flex ui-sref="signin" class="md-raised md-primary" ng-click="submit()">Sign In</md-button>
-					</md-input-container>
-				</div>
-			</md-list-item>
-		</md-list>
-	</div>
-</md-card-content>
+<div class="ui grid ">
+	<section class="four wide column centered">
+		<h1><i class="icon lock"></i> Sign in Account</h1>
+		<div flex-item flex-item="10">
+            <lx-text-field label="Username" error="errors.username[0]">
+                <input type="text" ng-model="uname">
+            </lx-text-field>
+            <span class="error-msg" ng-show="errors.username[0].length > 0">{{errors.username[0]}}</span>
+        </div>
+        <div flex-item flex-item="4">
+	        <lx-text-field label="Password" error="errors.password[0]">
+	            <input type="password" ng-model="password">
+	        </lx-text-field>
+            <span class="error-msg" ng-show="errors.password[0].length > 0">{{errors.password[0]}}</span>
+	    </div>
+	    <br/>
+	    <div flex-container="row">
+	    	<button class="btn btn--m btn--blue btn--raised" ng-click="submit()">Sign In</button>
+    	</div>
+	</section>
+</div>

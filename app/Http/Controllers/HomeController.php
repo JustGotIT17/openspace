@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use Hash;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\User;
 use Validator;
+use Mail;
 
 class HomeController extends Controller
 {
@@ -51,8 +53,12 @@ class HomeController extends Controller
             $validation = Validator::make($data, $rules, $messages);
             if($validation->fails())
                 return $validation->errors()->add('error', 'true');
-
+            $data['password'] = Hash::make($data['password']);
             $user = User::Create($data);
+            $mail = $user ? Mail::send('layouts.mail.verify', ['data'=>$user], function($message) use ($data){
+                $message->to($data['email'], $data['firstname']. ' '.$data['lastname'])->subject('Confirmation of account');
+            }) : '';
+            
             return $user ? 'Registration is successful' : 'Error occured.';
     }
 
@@ -73,14 +79,7 @@ class HomeController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function do_signin(Request $request)
-    {
-        //
-        $user = User::where('username', $request->get('username'))->where('password', $request->get('password'))->firstOrFail();
-        $user ? Auth::login($user) : '';
-        return Auth::check() ? $user : 'false';
-    }
-
+    
     /**
      * Show the form for editing the specified resource.
      *

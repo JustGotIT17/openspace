@@ -1,0 +1,31 @@
+<div class="container">
+	<div class="ui grid">
+		<div class="sixteen wide column">
+			<h1><i class="icon browser"></i> Dashboard</h1>
+			<div class="ui divider"></div>
+		</div>
+		<div class="ui stackable two row grid">
+				<div class="three wide column">
+					<div class="ui secondary vertical menu">
+					  <a class="active item" ui-sref="dashboard.home">
+					    <i class="mdi mdi-home"></i> Home
+					  </a>
+					  <a class="item" ui-sref="dashboard.shop">
+					    <i class="mdi mdi-barley"></i> Shop
+					  </a>
+					  <a class="item" ui-sref="dashboard.products">
+					    <i class="mdi mdi-hops"></i> Products
+					  </a>
+					  <a class="item">
+					    <i class="mdi mdi-chart-line"></i> Statistics
+					  </a>			  
+					</div>
+				</div>
+				<div class="twelve wide column">
+					<div ui-view="dashboard" class="animated fadeInDown">
+						
+					</div>
+				</div>
+		</div>
+	</div>
+</div>

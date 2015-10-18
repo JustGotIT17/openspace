@@ -1,15 +1,17 @@
+'use strict';
 var app = angular.module('DialogMiddleWare', []);
 
-app.factory('DialogFactory', ['$mdDialog', 
-	function($mdDialog){
+app.factory('DialogFactory', [ 'LxNotificationService', 
+	function(LxNotificationService){
 		return {
+			showInfo : function(title, message) {
+				LxNotificationService.info(title, message);
+			},
+			showError : function(title, message) {
+				LxNotificationService.error(title, message);
+			},
 			showAlert : function(title, message) {
-				var alert = $mdDialog.alert()
-					.title(title)
-					.content(message)
-					.ok('Close');
-
-				$mdDialog.show(alert);
+				LxNotificationService.alert(title, message);
 			}
 		}
 	}
