@@ -10,6 +10,7 @@ var app = angular.module('StarterApp', [
 ]);
 
 app.config(function($stateProvider, $urlRouterProvider){
+
 	$stateProvider
 		.state("home", {
 			url : '/',
@@ -34,7 +35,8 @@ app.config(function($stateProvider, $urlRouterProvider){
 			url : '/shop',
 			views : {
 				'dashboard' : {
-					templateUrl : 'templates/dashboard/shop.html'
+					templateUrl : 'templates/dashboard/shop.html',
+					controller : 'ShopController'
 				}
 			}
 		})

@@ -18,4 +18,5 @@ Route::get('/session/user', 'SessionController@user');
 Route::post('/session/signin', 'SessionController@do_signin');
 Route::get('/session/signout', 'SessionController@do_signout');
 
-
+Route::get('/api/cities', 'APIController@get_cities');
+Route::get('/api/provinces', 'APIController@get_provinces');

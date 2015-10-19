@@ -1,6 +1,6 @@
 'use strict';
-var app = angular.module('HomeModule', []);
+var app = angular.module('DashboardModule', []);
 
 app.controller('DashboardController', ['$scope', function($scope){
-	console.log('hello');
+	
 }]);

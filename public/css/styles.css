@@ -137,6 +137,20 @@ abbr,acronym {
 }
 /* Custom CSS
  * --------------------------------------- */
+.ui.vertical.menu {
+	border-right: 3px solid rgba(54, 84, 121, 1);
+}
+.ui.vertical.menu .item:hover {
+	background-color: rgba(54, 84, 121, .75) !important;
+}
+.ui.vertical.menu .item:hover, .ui.secondary.menu .active.item {
+ 	background-color: rgba(54, 84, 121, 1);
+ 	color: white;
+ 	border-radius: 10px 0px 0px 10px !important;
+}
+.ui.vertical.menu {
+	width: auto;
+}
 body{
 	font-family: arial,helvetica;
 	color: #333;
@@ -200,6 +214,10 @@ nav#main #menu  a:hover{
 nav#main #menu li a{
 	padding: 9px;
 	display:block;
+}
+nav#main #menu li a.active {
+	border: 2px solid rgba(54, 84, 121, 1);
+	border-radius: 5px;
 }
 nav#main .dropdown .btn--icon.btn--l .mdi, .dropdown-menu .dropdown-link {
 	color: rgb(54, 84, 121) !important;

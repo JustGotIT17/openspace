@@ -1,1 +1,51 @@
-<h1>Shop</h1>
+<h2 class="ui header">
+	<i class="mdi mdi-barley"></i>
+	<div class="content">
+		Shop Information
+		<div class="sub header">Manage your shop details</div>
+	</div>
+</h2>
+<div class="ui two column doubling grid container">
+	<div class="column">
+		<div flex-container="column">
+		    <div flex-item>
+		        <lx-text-field label="Shop Name">
+		            <input type="text" ng-model="iname">
+		        </lx-text-field>
+		    </div>
+		    <div flex-item>
+		        <lx-text-field label="Description">
+		            <input type="text" ng-model="idesc">
+		        </lx-text-field>
+		    </div>
+		    <div flex-item>
+		        <lx-text-field label="address">
+		            <input type="text" ng-model="iaddress">
+		        </lx-text-field>
+		    </div>		    
+		</div>
+		<div class="row">
+			<div flex-item>
+		        <lx-select ng-model="selects.selectedPerson" placeholder="City/Municipality" choices="cities" floating-label>
+	                <lx-select-selected>
+	                    {{ $selected.verbose_name}}
+	                </lx-select-selected>
+	                <lx-select-choices>
+	                    {{ $choice.verbose_name }}
+	                </lx-select-choices>
+	            </lx-select>
+		        <lx-select ng-model="selects.selectedPerson" placeholder="Province" choices="provinces" floating-label>
+	                <lx-select-selected>
+	                    {{ $selected.verbose_name}}
+	                </lx-select-selected>
+	                <lx-select-choices>
+	                    {{ $choice.verbose_name }}
+	                </lx-select-choices>
+	            </lx-select>
+		    </div>
+		</div>
+	</div>
+	<div class="column">
+		Div 2
+	</div>
+</div>

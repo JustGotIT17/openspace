@@ -55,11 +55,11 @@ class HomeController extends Controller
                 return $validation->errors()->add('error', 'true');
             $data['password'] = Hash::make($data['password']);
             $user = User::Create($data);
-            $mail = $user ? Mail::send('layouts.mail.verify', ['data'=>$user], function($message) use ($data){
+            $mail = Mail::send('layouts.mail.verify', ['data'=>$user], function($message) use ($data){
                 $message->to($data['email'], $data['firstname']. ' '.$data['lastname'])->subject('Confirmation of account');
-            }) : '';
+            });
             
-            return $user ? 'Registration is successful' : 'Error occured.';
+            return $mail ? 'Registration is successful' : 'Error occured.';
     }
 
     /**

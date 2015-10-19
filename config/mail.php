@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'driver' =>'mailgun',
+    'driver' => 'mailgun',
 
     /*
     |--------------------------------------------------------------------------
@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'from' => ['address' => 'postmaster@sandbox899c1755254f4dfbaa1aa64f6738c248.mailgun.org', 'name' => 'OpenSpace Support'],
+    'from' => ['address' => 'luckyspin2014@gmail.com', 'name' => 'OpenSpace Support'],
 
     /*
     |--------------------------------------------------------------------------

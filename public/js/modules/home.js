@@ -1,14 +1,13 @@
 'use strict';
-var app = angular.module('HomeModule', []);
+var app = angular.module('HomeModule', [
+		'DashboardModule',
+		'ShopModule'
+	]);
 
 app.controller('HomeController', ['$scope', 'UserFactory', function($scope, UserFactory){
 	UserFactory.getCurrentUser().then(function(res){
 		$scope.user = res
 	});
-}]);
-
-app.controller('DashboardController', ['$scope', function($scope){
-	console.log('hello');
 }]);
 
 app.controller('SignupController', ['$scope', '$http', 'DialogFactory', 'RoutingFactory', function($scope, $http, DialogFactory, RoutingFactory){

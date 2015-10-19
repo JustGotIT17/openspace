@@ -18,9 +18,9 @@
                     <small style="display:flex; flex-flow:row wrap;align-items:center; margin-left:5px;" class="animated infinite jello">alpha</small>
                 </div>
                 <ul id="menu" class="animated fadeInDown">
-                    <li><a ui-sref="home">Home</a></li>
-                    <li><a ui-sref="services">Services</a></li>
-                    <li><a ui-sref="about">About</a></li>
+                    <li><a ui-sref-active="active" ui-sref="home">Home</a></li>
+                    <li><a ui-sref-active="active" ui-sref="services">Services</a></li>
+                    <li><a ui-sref-active="active" ui-sref="about">About</a></li>
                 </ul>
                 <lx-dropdown position="right" ng-show="user.id.length > 0">
                     <button class="btn btn--l btn--black btn--icon" lx-ripple lx-dropdown-toggle>
@@ -107,8 +107,9 @@
         <script src="{{asset('js/modules/angular-animate.min.js')}}"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.js"></script>
-        <script src="{{asset('js/controllers/dashboardcontroller.js')}}"></script>
         <!-- END Angular Material Dependencies -->
+        <script src="{{asset('js/controllers/shopcontroller.js')}}"></script>
+        <script src="{{asset('js/controllers/dashboardcontroller.js')}}"></script>
         <script src="{{asset('js/modules/home.js')}}"></script>
         <script src="{{asset('js/modules/middleware/dialog.js')}}"></script>
         <script src="{{asset('js/modules/middleware/user.js')}}"></script>
