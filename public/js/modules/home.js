@@ -10,9 +10,12 @@ app.controller('HomeController', ['$scope', 'UserFactory', function($scope, User
 	});
 }]);
 
-app.controller('SignupController', ['$scope', '$http', 'DialogFactory', 'RoutingFactory', function($scope, $http, DialogFactory, RoutingFactory){
+app.controller('SignupController', ['$scope', '$http', '$state', 'DialogFactory', 'RoutingFactory', function($scope, $http, $state, DialogFactory, RoutingFactory){
 	//
+
 	$scope.submit = function() {
+	RoutingFactory.goToState('signup.confirm');
+	/*
 		$scope.data = {
 			firstname : $scope.fname,
 			lastname : $scope.lname,
@@ -30,9 +33,10 @@ app.controller('SignupController', ['$scope', '$http', 'DialogFactory', 'Routing
 				} else{
 					$scope.errors = null;
 					DialogFactory.showInfo('Registration successful', 'Please wait.');
-					RoutingFactory.redirect('/');
+					RoutingFactory.goToState('signup.confirm');
 				}				
 			});
+	*/
 	}
 }]);
 

@@ -1,0 +1,13 @@
+<div class="ui attached segment">
+	<div flex-container="row">
+		<div flex-item>
+	        <lx-text-field label="Confirmatio Code" error="errors.ccode[0]">
+	            <input type="text" ng-model="ccode">
+	        </lx-text-field>
+            <span class="error-msg" ng-show="errors.ccode[0].length > 0">{{errors.ccode[0]}}</span>
+	    </div>
+    </div>
+    <div flex-container="row">			
+    	<button class="btn btn--xl btn--blue btn--raised margin-top-lg" ng-click="submit()">Finish</button>
+    </div>
+</div>

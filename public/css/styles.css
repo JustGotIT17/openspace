@@ -135,6 +135,16 @@ abbr,acronym {
 }.margin-rig-xxl {
 	margin-right: 30px !important; 	
 }
+
+.align-left {
+	float: left;
+}
+.align-right {
+	float: right;
+}
+.clearfix {
+	clear: both;
+}
 /* Custom CSS
  * --------------------------------------- */
 .ui.vertical.menu {
@@ -263,7 +273,6 @@ footer#main section header h3 {
 footer#main section p {
 	text-align: center;
 	color: #0F2744;
-	font-size: .85em;
 }
 
 .dropdown {

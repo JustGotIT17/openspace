@@ -1,0 +1,48 @@
+<div class="ui attached segment">
+	<div flex-container="row">
+		<div flex-item>
+	        <lx-text-field label="First name" error="errors.firstname[0]">
+	            <input type="text" ng-model="fname">
+	        </lx-text-field>
+            <span class="error-msg" ng-show="errors.firstname[0].length > 0">{{errors.firstname[0]}}</span>
+	    </div>
+		<div flex-item>
+	        <lx-text-field label="Last name" error="errors.lastname[0]">
+	            <input type="text" ng-model="lname">
+	        </lx-text-field>
+            <span class="error-msg" ng-show="errors.lastname[0].length > 0">{{errors.lastname[0]}}</span>
+	    </div>
+    	
+	</div>
+	<div flex-container="row" flex-gutter="24">
+		<div flex-item>
+            <lx-text-field label="Username" error="errors.username[0]">
+                <input type="text" ng-model="uname">
+            </lx-text-field>
+            <span class="error-msg" ng-show="errors.username[0].length > 0">{{errors.username[0]}}</span>
+        </div>
+        <div flex-item>
+	        <lx-text-field label="Email Address" error="errors.email[0]">
+	            <input type="email" ng-model="email">
+	        </lx-text-field>
+            <span class="error-msg" ng-show="errors.email[0].length > 0">{{errors.email[0]}}</span>
+	    </div>
+	</div>
+	<div flex-container="row" flex-gutter="24">
+		<div flex-item>
+            <lx-text-field label="Password" error="errors.password[0]">
+                <input type="password" ng-model="password">
+            </lx-text-field>
+            <span class="error-msg" ng-show="errors.password[0].length > 0">{{errors.password[0]}}</span>
+        </div>
+        <div flex-item>
+	        <lx-text-field label="Confirm Password" error="errors.cpassword[0]">
+	            <input type="password" ng-model="cpassword">
+	        </lx-text-field>
+            <span class="error-msg" ng-show="errors.cpassword[0].length > 0">{{errors.cpassword[0]}}</span>
+	    </div>
+	</div>
+	<div flex-container="row">			
+		<button class="btn btn--xl btn--blue btn--raised margin-top-lg" ng-click="submit()">Next</button>
+	</div>
+</div>

@@ -89,9 +89,9 @@
                         <i class="icon icon--m icon--blue icon--circled twitter"></i>
                         <i class="icon icon--m icon--brown icon--circled instagram"></i>
                     </div>
-                    <p class="margin-top-sm"><small>All rights reserved. &copy 2015</small></p>
-                    <p><small>Developed by Jeffrey Ocampo</small></p>
-                    <p><small>Powered by <a href="http://www.laravel.com/" style="color:rgb(250, 138, 69);">Laravel</a></small></p>  
+                    <p class="margin-top-sm">All rights reserved. &copy 2015</p>
+                    <p>Developed by Jeffrey Ocampo</p>
+                    <p>Powered by <a href="http://www.laravel.com/" style="color:rgb(250, 138, 69);">Laravel</a></p>  
                 </section>
             </section>
         </footer>

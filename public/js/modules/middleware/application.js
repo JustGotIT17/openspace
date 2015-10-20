@@ -3,12 +3,12 @@
 var app = angular.module('ApplicationModule', []);
 
 app.factory('RoutingFactory', [
-	'$timeout',
-	function($timeout) {
+	'$timeout', '$state', 
+	function($timeout, $state) {
 		return {
-			redirect : function(location) {
+			goToState : function(location) {
 				$timeout(function(){
-					window.location = location;
+					$state.go(location);
 				}, 500);
 			}
 		}

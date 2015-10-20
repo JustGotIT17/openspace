@@ -16,13 +16,13 @@ app.config(function($stateProvider, $urlRouterProvider){
 			url : '/',
 			templateUrl : 'templates/home.html',
 		})
+
 		.state("dashboard", {
 			url : '/dashboard',
 			abstract: true,
 			templateUrl: 'templates/dashboard/dashboard.html',
 			controller : 'DashboardController',
-		})
-		.state("dashboard.home", {
+		}).state("dashboard.home", {
 			url : '/home',
 			views : {
 				'dashboard' : {
@@ -30,8 +30,7 @@ app.config(function($stateProvider, $urlRouterProvider){
 				}
 			}
 			
-		})
-		.state("dashboard.shop", {
+		}).state("dashboard.shop", {
 			url : '/shop',
 			views : {
 				'dashboard' : {
@@ -39,8 +38,7 @@ app.config(function($stateProvider, $urlRouterProvider){
 					controller : 'ShopController'
 				}
 			}
-		})
-		.state("dashboard.products", {
+		}).state("dashboard.products", {
 			url : '/products',
 			views : {
 				'dashboard' : {
@@ -48,28 +46,51 @@ app.config(function($stateProvider, $urlRouterProvider){
 				}
 			}
 		})
+
 		.state("services", {
 			url : '/services',
 			templateUrl : 'templates/services.html'
 		})
+
 		.state("about", {
 			url : '/about',
 			templateUrl : 'templates/about.html'
 		})
+
 		.state("signup", {
 			url : '/signup',
+			abstract : true,
 			templateUrl : 'templates/signup.html',
 			controller : 'SignupController'
+		}).state("signup.form", {
+			url : '/form',
+			views : {
+				'signup' : {
+					templateUrl : 'templates/signup/form.html',
+					controller : 'SignupController'
+				}
+			}
+		}).state("signup.confirm", {
+			url : '/confirm',
+			views : {
+				'signup' : {
+					templateUrl : 'templates/signup/confirm.html',
+					controller : 'SignupController'
+				}
+			}
 		})
+
 		.state("signin", {
 			url : '/signin',
 			templateUrl : 'templates/signin.html',
 			controller : 'SigninController'
 		})
+
 		.state("signout", {
 			url : '/signout',
 			controller : 'SignoutController'
 		})
+
 	$urlRouterProvider.otherwise('/');
 });
 

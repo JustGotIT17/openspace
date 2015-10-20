@@ -1,10 +1,10 @@
-<div class="container">
-    <section>
+<div class="ui vertical center aligned segment">
+    <section class="ui text container">
 		<h1>OpenSpace</h1>
 		<p>Creating space more open and wide.</p>
-        <section ng-hide="user.id.length > 0">
-            <button flex ui-sref="signup" class="btn btn--m btn--green btn--raised" lx-ripple lx-tooltip="Create account" tooltip-position="bottom">Sign Up</button>
-            <button flex ui-sref="signin" class="btn btn--m btn--blue btn--raised" lx-ripple lx-tooltip="Use account" tooltip-position="bottom">Sign In</button>
+        <section ng-hide="user.id.length > 0" class="margin-top-xl">
+            <button flex ui-sref="signup.form" class="btn btn--xl btn--green btn--raised" lx-ripple lx-tooltip="Create account" tooltip-position="bottom">Sign Up</button>
+            <button flex ui-sref="signin" class="btn btn--xl btn--blue btn--raised" lx-ripple lx-tooltip="Use account" tooltip-position="bottom">Sign In</button>
         </section>
     </section>
 </div>   	
